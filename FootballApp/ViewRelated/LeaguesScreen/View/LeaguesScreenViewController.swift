@@ -47,8 +47,9 @@ extension LeaguesScreenViewController:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         cell.textLabel?.text = viewModel.competitions.value[indexPath.row].name
+        cell.detailTextLabel?.text = viewModel.competitions.value[indexPath.row].area.name
         return cell
     }
     
