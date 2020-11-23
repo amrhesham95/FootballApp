@@ -42,5 +42,37 @@ class Network {
             }
             dataTask?.resume()
         }
+    
+    
+    func getAllTeams(with id:Int, completion:@escaping ( Array<Team> ) -> Void) {
+        let url  = URL(string: "http://api.football-data.org/v2/competitions/\(id)/teams")
+                guard let comptetionsUrl = url else {return}
+                
+                var request = URLRequest(url: comptetionsUrl)
+                request.setValue("07e8f775859f4a15bbcf02e0f98eb4f4", forHTTPHeaderField: "X-Auth-Token")
+                    // 4
+                    dataTask =
+                        defaultSession.dataTask(with: request) { [weak self] data, response, error in
+                            defer {
+                                self?.dataTask = nil
+                            }
+                            // 5
+                            if let error = error {
+                                print(error)
+                            } else if
+                                let data = data {
+                                // 6
+                                do {
+                                    let teamsResponse = try JSONDecoder().decode(TeamsResponse.self, from: data)
+                                    if let teams = teamsResponse.teams {
+                                        completion(teams)
+                                    }
+                                }catch {
+                                        print(error)
+                                }
+                            }
+                    }
+                    dataTask?.resume()
+                }
     }
 

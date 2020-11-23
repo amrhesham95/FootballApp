@@ -58,6 +58,15 @@ extension LeaguesScreenViewController:UITableViewDataSource {
     }
 }
 
+extension LeaguesScreenViewController:UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let teamsScreenViewController = TeamsScreenViewController(viewModel: TeamsScreenViewModel(competitionID: self.viewModel.competitions.value[indexPath.row].id))
+        self.navigationController?.pushViewController(teamsScreenViewController, animated: true)
+        
+
+    }
+}
+
 // MARK: - Binding
 private extension LeaguesScreenViewController {
     
@@ -73,5 +82,6 @@ private extension LeaguesScreenViewController {
     
     func configureTableView() {
         self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
 }
