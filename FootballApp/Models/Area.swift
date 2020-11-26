@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Area
 struct Area: Codable {
     let id: Int
-    let name, countryCode: String
+    let name, countryCode: String?
     let ensignURL: String?
     
     enum CodingKeys: String, CodingKey {

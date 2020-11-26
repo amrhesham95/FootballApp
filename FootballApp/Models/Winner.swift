@@ -8,13 +8,13 @@
 
 import Foundation
 
+
 // MARK: - Winner
 struct Winner: Codable {
     let id: Int
-    let name: String
-    let shortName, tla: String?
+    let name, shortName, tla: String?
     let crestURL: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id, name, shortName, tla
         case crestURL = "crestUrl"

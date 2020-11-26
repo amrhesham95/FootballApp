@@ -12,7 +12,7 @@ import Foundation
 struct Leagues: Codable {
     let count: Int
     let filters: Filters
-    let competitions: [Competition]
+    let competitions: [Competition]?
 }
 
 

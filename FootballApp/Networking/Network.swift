@@ -49,7 +49,7 @@ class Network {
                 guard let comptetionsUrl = url else {return}
                 
                 var request = URLRequest(url: comptetionsUrl)
-                request.setValue("07e8f775859f4a15bbcf02e0f98eb4f4", forHTTPHeaderField: "X-Auth-Token")
+                request.setValue("ec775bfe0f1f4b44bd94227cb623f809", forHTTPHeaderField: "X-Auth-Token")
                     // 4
                     dataTask =
                         defaultSession.dataTask(with: request) { [weak self] data, response, error in
@@ -57,7 +57,7 @@ class Network {
                                 self?.dataTask = nil
                             }
                             // 5
-                            if let error = error {
+                             if let error = error {
                                 print(error)
                             } else if
                                 let data = data {

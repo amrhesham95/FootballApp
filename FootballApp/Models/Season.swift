@@ -7,10 +7,11 @@
 //
 
 import Foundation
+
 // MARK: - Season
 struct Season: Codable {
     let id: Int
-    let startDate, endDate: String
-    let currentMatchday: JSONNull?
-    let availableStages: [String]
+    let startDate, endDate: String?
+    let currentMatchday: Int?
+    let winner: Winner?
 }

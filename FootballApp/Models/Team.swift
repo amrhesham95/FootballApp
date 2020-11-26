@@ -13,17 +13,18 @@ struct Team: Codable {
     let area: Area
     let name, shortName, tla: String
     let crestURL: String?
-    let address, phone: String
-    let website: String
+    let address, phone: String?
+    let website: String?
     let email: String?
-    let founded: Int
-    let clubColors: String
+    let founded: Int?
+    let clubColors: String?
     let venue: String?
-    let lastUpdated: Date
+//    let lastUpdated: Date
 
     enum CodingKeys: String, CodingKey {
         case id, area, name, shortName, tla
         case crestURL = "crestUrl"
-        case address, phone, website, email, founded, clubColors, venue, lastUpdated
+        case address, phone, website, email, founded, clubColors, venue
+//        case lastUpdated
     }
 }

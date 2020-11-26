@@ -7,7 +7,7 @@
 //
 
 import Foundation
-// MARK: - Welcome
+// MARK: - TeamsResponse
 struct TeamsResponse: Codable {
     let count: Int?
     let filters: Filters?
