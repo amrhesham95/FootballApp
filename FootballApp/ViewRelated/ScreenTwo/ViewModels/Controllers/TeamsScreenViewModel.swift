@@ -12,7 +12,7 @@ import Foundation
 class TeamsScreenViewModel {
     
     // MARK: - Properties
-    var teams = Observable<Array<Team>>([])
+    var teams = Observable<Array<StorageTeam>>([])
     var competitionID:Int
     let network = Network()
     

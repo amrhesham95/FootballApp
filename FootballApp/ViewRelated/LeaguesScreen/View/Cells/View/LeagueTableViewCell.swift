@@ -31,7 +31,7 @@ private extension LeagueTableViewCell {
     
     func configureCell() {
         self.leageNameLabel.text = viewModel?.competition.name
-        self.leagueAreaLabel.text = viewModel?.competition.area.name
+        self.leagueAreaLabel.text = viewModel?.competition.area?.name
         self.startDateLabel.text = viewModel?.competition.currentSeason?.startDate
         self.endDateLabel.text = viewModel?.competition.currentSeason?.endDate
         

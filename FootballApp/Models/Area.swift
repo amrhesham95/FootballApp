@@ -19,3 +19,13 @@ struct Area: Codable {
         case ensignURL = "ensignUrl"
     }
 }
+
+
+extension Area {
+    var storageArea: StorageArea {
+        let storageArea = StorageArea()
+        storageArea.id = id
+        storageArea.name = name ?? ""
+        return storageArea
+    }
+}

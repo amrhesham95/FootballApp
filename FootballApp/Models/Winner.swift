@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 // MARK: - Winner
 struct Winner: Codable {
     let id: Int

@@ -14,3 +14,13 @@ struct CurrentSeason: Codable {
     let currentMatchday: Int?
     let winner: Winner?
 }
+
+extension CurrentSeason {
+    var storageCurrentSeason: StorageCurrentSeason {
+        let currentSeason = StorageCurrentSeason()
+        currentSeason.id = id
+        currentSeason.startDate = startDate
+        currentSeason.endDate = endDate
+        return currentSeason
+    }
+}

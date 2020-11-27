@@ -28,3 +28,19 @@ struct Team: Codable {
 //        case lastUpdated
     }
 }
+
+
+extension Team {
+    var storageTeam: StorageTeam {
+        let storageTeam = StorageTeam()
+        storageTeam.id = id
+        storageTeam.name = name
+        storageTeam.crestURL = crestURL ?? ""
+        storageTeam.shortName = shortName
+        storageTeam.address = address ?? ""
+        storageTeam.phone = phone ?? ""
+        storageTeam.website = website ?? ""
+        
+        return storageTeam
+    }
+}

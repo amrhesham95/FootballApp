@@ -12,7 +12,7 @@ class Network {
     var dataTask: URLSessionDataTask?
     var errorMessage:String?
     
-    func getAllLeagues(completion:@escaping (Leagues) -> Void) {
+    func getAllLeagues(completion:@escaping (StorageLeagues) -> Void) {
        let url  = URL(string: "http://api.football-data.org/v2/competitions")
         guard let comptetionsUrl = url else {return}
         
@@ -32,7 +32,7 @@ class Network {
                         // 6
                         do {
                             let leagues = try JSONDecoder().decode(Leagues.self, from: data)
-                            completion(leagues)
+                            completion(leagues.storageLeagues)
                         }catch {
                                 print(error)
                         }
@@ -42,7 +42,7 @@ class Network {
         }
     
     
-    func getAllTeams(with id:Int, completion:@escaping ( Array<Team> ) -> Void) {
+    func getAllTeams(with id:Int, completion:@escaping ( Array<StorageTeam> ) -> Void) {
         let url  = URL(string: "http://api.football-data.org/v2/competitions/\(id)/teams")
                 guard let comptetionsUrl = url else {return}
                 
@@ -62,14 +62,14 @@ class Network {
                                 // 6
                                 do {
                                     let teamsResponse = try JSONDecoder().decode(TeamsResponse.self, from: data)
-                                    if let teams = teamsResponse.teams {
-                                        completion(teams)
-                                    }
+                                    
+                                    completion(Array(teamsResponse.storageTeamsResponse.storageTeams) )
+                                    
                                 }catch {
-                                        print(error)
+                                    print(error)
                                 }
                             }
-                    }
+        }
                     dataTask?.resume()
                 }
     }

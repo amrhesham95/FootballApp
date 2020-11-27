@@ -26,3 +26,15 @@ struct Competition: Codable {
 //        case lastUpdated
     }
 }
+
+
+extension Competition {
+    var storageCompetition: StorageCompetition {
+        let storageCompetition = StorageCompetition()
+        storageCompetition.id = id
+        storageCompetition.name = name
+        storageCompetition.area = area.storageArea
+        storageCompetition.currentSeason = currentSeason?.storageCurrentSeason
+        return storageCompetition
+    }
+}

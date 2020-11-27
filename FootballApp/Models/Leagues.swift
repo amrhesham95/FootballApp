@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Competitions
 struct Leagues: Codable {
     let count: Int
     let filters: Filters
@@ -18,4 +18,16 @@ struct Leagues: Codable {
 
 // MARK: - Filters
 struct Filters: Codable {
+}
+
+
+extension Leagues {
+    var storageLeagues: StorageLeagues {
+        let storageLeagues = StorageLeagues()
+        storageLeagues.count = count
+        competitions?.forEach({ (comptetion) in
+            storageLeagues.storageCompetitions.append(comptetion.storageCompetition)
+        })
+        return storageLeagues
+    }
 }

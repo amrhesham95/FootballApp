@@ -13,10 +13,10 @@ class TeamTableViewCellViewModel {
     
     
     // MARK: - Properties
-    var team:Team
+    var team:StorageTeam
     
     // MARK: - Init
-    init(team:Team) {
+    init(team:StorageTeam) {
         self.team = team
     }
 }

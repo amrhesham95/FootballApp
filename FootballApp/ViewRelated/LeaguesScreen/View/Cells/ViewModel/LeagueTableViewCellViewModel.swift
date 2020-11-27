@@ -13,10 +13,10 @@ class LeagueTableViewCellViewModel {
     
     
     // MARK: - Properties
-    var competition:Competition
+    var competition:StorageCompetition
     
     // MARK: - Init
-    init(competition:Competition) {
+    init(competition:StorageCompetition) {
         self.competition = competition
     }
 }

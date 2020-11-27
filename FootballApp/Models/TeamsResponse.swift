@@ -7,11 +7,24 @@
 //
 
 import Foundation
-// MARK: - TeamsResponse
+
+// MARK: - Teams
 struct TeamsResponse: Codable {
     let count: Int?
     let filters: Filters?
     let competition: Competition?
     let season: Season?
     let teams: [Team]?
+}
+
+extension TeamsResponse {
+    var storageTeamsResponse: StorageTeamsResponse {
+        let storageTeamsResponse = StorageTeamsResponse()
+        storageTeamsResponse.count = count ?? .zero
+        teams?.forEach({ (team) in
+            storageTeamsResponse.storageTeams.append(team.storageTeam)
+        })
+
+        return storageTeamsResponse
+    }
 }
