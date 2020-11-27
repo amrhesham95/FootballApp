@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8748100C25708CA000785111 /* TeamTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748100B25708CA000785111 /* TeamTableViewCellViewModel.swift */; };
+		874810132570975C00785111 /* LeagueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874810112570975C00785111 /* LeagueTableViewCell.swift */; };
+		874810142570975C00785111 /* LeagueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 874810122570975C00785111 /* LeagueTableViewCell.xib */; };
+		8748101625710BC900785111 /* LeagueTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748101525710BC900785111 /* LeagueTableViewCellViewModel.swift */; };
 		878DFBBC256C5703003077C5 /* TeamsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DFBBA256C5703003077C5 /* TeamsScreenViewController.swift */; };
 		878DFBBD256C5703003077C5 /* TeamsScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878DFBBB256C5703003077C5 /* TeamsScreenViewController.xib */; };
 		878DFBBF256C5718003077C5 /* TeamsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DFBBE256C5718003077C5 /* TeamsScreenViewModel.swift */; };
@@ -41,6 +44,9 @@
 		4E041DAADCBB0F37F9422915 /* Pods-FootballApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballApp.debug.xcconfig"; path = "Target Support Files/Pods-FootballApp/Pods-FootballApp.debug.xcconfig"; sourceTree = "<group>"; };
 		76593F51F34359B7510385EC /* Pods_FootballApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8748100B25708CA000785111 /* TeamTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		874810112570975C00785111 /* LeagueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableViewCell.swift; sourceTree = "<group>"; };
+		874810122570975C00785111 /* LeagueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTableViewCell.xib; sourceTree = "<group>"; };
+		8748101525710BC900785111 /* LeagueTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		878DFBBA256C5703003077C5 /* TeamsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamsScreenViewController.swift; path = FootballApp/Models/TeamsScreenViewController.swift; sourceTree = SOURCE_ROOT; };
 		878DFBBB256C5703003077C5 /* TeamsScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TeamsScreenViewController.xib; path = FootballApp/Models/TeamsScreenViewController.xib; sourceTree = SOURCE_ROOT; };
 		878DFBBE256C5718003077C5 /* TeamsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamsScreenViewModel.swift; path = FootballApp/ViewRelated/ScreenTwo/ViewModels/Controllers/TeamsScreenViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -105,6 +111,41 @@
 				878DFBBE256C5718003077C5 /* TeamsScreenViewModel.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8748100D2570971B00785111 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				874810102570974400785111 /* ViewModel */,
+				8748100F2570973300785111 /* View */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8748100E2570972100785111 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA1CE51D256AEEC300FC7E36 /* LeaguesScreenViewController.swift */,
+				BA1CE51E256AEEC300FC7E36 /* LeaguesScreenViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8748100F2570973300785111 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				874810112570975C00785111 /* LeagueTableViewCell.swift */,
+				874810122570975C00785111 /* LeagueTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		874810102570974400785111 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8748101525710BC900785111 /* LeagueTableViewCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		879F32B825705D04002B07F5 /* Cells */ = {
@@ -234,8 +275,8 @@
 		BA3DB9432561A1BE00F213E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA1CE51D256AEEC300FC7E36 /* LeaguesScreenViewController.swift */,
-				BA1CE51E256AEEC300FC7E36 /* LeaguesScreenViewController.xib */,
+				8748100E2570972100785111 /* Controllers */,
+				8748100D2570971B00785111 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3DB9352561A07000F213E1 /* LaunchScreen.storyboard in Resources */,
+				874810142570975C00785111 /* LeagueTableViewCell.xib in Resources */,
 				878DFBBD256C5703003077C5 /* TeamsScreenViewController.xib in Resources */,
 				BA1CE520256AEEC300FC7E36 /* LeaguesScreenViewController.xib in Resources */,
 				BA3DB9322561A07000F213E1 /* Assets.xcassets in Resources */,
@@ -415,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				878DFBC5256C590C003077C5 /* JSONNUll.swift in Sources */,
+				8748101625710BC900785111 /* LeagueTableViewCellViewModel.swift in Sources */,
 				878DFBC3256C58DE003077C5 /* Season.swift in Sources */,
 				BA3DB92D2561A06F00F213E1 /* ViewController.swift in Sources */,
 				BA1CE529256AF2FE00FC7E36 /* Area.swift in Sources */,
@@ -433,6 +476,7 @@
 				878DFBBC256C5703003077C5 /* TeamsScreenViewController.swift in Sources */,
 				878DFBC7256C5A9F003077C5 /* TeamsResponse.swift in Sources */,
 				BA1CE52D256AF33100FC7E36 /* Winner.swift in Sources */,
+				874810132570975C00785111 /* LeagueTableViewCell.swift in Sources */,
 				BA1CE525256AF24E00FC7E36 /* Leagues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

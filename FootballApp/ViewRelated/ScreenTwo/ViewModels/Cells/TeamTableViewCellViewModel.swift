@@ -19,10 +19,4 @@ class TeamTableViewCellViewModel {
     init(team:Team) {
         self.team = team
     }
-    
-    
-    // MARK: - Handlers
-    func configureCell() {
-        
-    }
 }

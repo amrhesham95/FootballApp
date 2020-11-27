@@ -47,9 +47,8 @@ extension LeaguesScreenViewController:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = viewModel.competitions.value[indexPath.row].name
-        cell.detailTextLabel?.text = viewModel.competitions.value[indexPath.row].area.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LeagueTableViewCell", for: indexPath) as!  LeagueTableViewCell
+        configureCell(cell, at: indexPath)
         return cell
     }
     
@@ -83,5 +82,11 @@ private extension LeaguesScreenViewController {
     func configureTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "LeagueTableViewCell")
+    }
+    
+    func configureCell(_ cell:LeagueTableViewCell, at indexPath :IndexPath){
+        let cellViewModel = LeagueTableViewCellViewModel(competition: viewModel.competitions.value[indexPath.row])
+        cell.viewModel = cellViewModel
     }
 }
