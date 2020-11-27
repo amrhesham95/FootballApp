@@ -7,10 +7,13 @@
 //
 
 import Foundation
+
 class Network {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     var errorMessage:String?
+    
+    let manager = RealmStorage()
     
     func getAllLeagues(completion:@escaping (StorageLeagues) -> Void) {
        let url  = URL(string: "http://api.football-data.org/v2/competitions")
@@ -32,6 +35,11 @@ class Network {
                         // 6
                         do {
                             let leagues = try JSONDecoder().decode(Leagues.self, from: data)
+                            
+                            
+//                            DispatchQueue.main.async {
+//                               try! self?.manager.insertNewObject(object: leagues.storageLeagues)
+//                            }
                             completion(leagues.storageLeagues)
                         }catch {
                                 print(error)

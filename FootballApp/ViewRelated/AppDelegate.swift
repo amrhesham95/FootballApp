@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImageSVGCoder
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
         
+        print(Realm.Configuration.defaultConfiguration.fileURL)
         let leaguesScreenViewController = LeaguesScreenViewController(viewModel: LeaguesScreenViewModel())
         let navigationController = UINavigationController(rootViewController: leaguesScreenViewController)
         self.window?.rootViewController = navigationController
