@@ -17,8 +17,6 @@ class Network {
         guard let comptetionsUrl = url else {return}
         
         var request = URLRequest(url: comptetionsUrl)
-//        request.setValue("X-Auth-Token", forHTTPHeaderField: "    ec775bfe0f1f4b44bd94227cb623f809")
-            // 4
             dataTask =
                 defaultSession.dataTask(with: request) { [weak self] data, response, error in
                     defer {

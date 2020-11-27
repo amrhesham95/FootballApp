@@ -21,7 +21,7 @@ class LeaguesScreenViewController: UIViewController {
     // MARK: - Init
     init(viewModel:LeaguesScreenViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: "LeaguesScreenViewController", bundle: nil)
+        super.init(nibName: nil, bundle: nil)
         bindOnViewModel()
     }
     

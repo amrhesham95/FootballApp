@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		878DFBC3256C58DE003077C5 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DFBC2256C58DE003077C5 /* Season.swift */; };
 		878DFBC5256C590C003077C5 /* JSONNUll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DFBC4256C590C003077C5 /* JSONNUll.swift */; };
 		878DFBC7256C5A9F003077C5 /* TeamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DFBC6256C5A9F003077C5 /* TeamsResponse.swift */; };
+		879F32BC25705D83002B07F5 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F32BA25705D83002B07F5 /* TeamTableViewCell.swift */; };
+		879F32BD25705D83002B07F5 /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879F32BB25705D83002B07F5 /* TeamTableViewCell.xib */; };
 		BA1CE51F256AEEC300FC7E36 /* LeaguesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1CE51D256AEEC300FC7E36 /* LeaguesScreenViewController.swift */; };
 		BA1CE520256AEEC300FC7E36 /* LeaguesScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1CE51E256AEEC300FC7E36 /* LeaguesScreenViewController.xib */; };
 		BA1CE522256AEEED00FC7E36 /* LeaguesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1CE521256AEEED00FC7E36 /* LeaguesScreenViewModel.swift */; };
@@ -30,9 +32,13 @@
 		BA3DB9322561A07000F213E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3DB9312561A07000F213E1 /* Assets.xcassets */; };
 		BA3DB9352561A07000F213E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3DB9332561A07000F213E1 /* LaunchScreen.storyboard */; };
 		BA990F76256B0A2000800EFA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA990F75256B0A2000800EFA /* Observable.swift */; };
+		DC3F3C8DE524534731348CE5 /* Pods_FootballApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76593F51F34359B7510385EC /* Pods_FootballApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D5C03140096BA114255BF71 /* Pods-FootballApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballApp.release.xcconfig"; path = "Target Support Files/Pods-FootballApp/Pods-FootballApp.release.xcconfig"; sourceTree = "<group>"; };
+		4E041DAADCBB0F37F9422915 /* Pods-FootballApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballApp.debug.xcconfig"; path = "Target Support Files/Pods-FootballApp/Pods-FootballApp.debug.xcconfig"; sourceTree = "<group>"; };
+		76593F51F34359B7510385EC /* Pods_FootballApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		878DFBBA256C5703003077C5 /* TeamsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamsScreenViewController.swift; path = FootballApp/Models/TeamsScreenViewController.swift; sourceTree = SOURCE_ROOT; };
 		878DFBBB256C5703003077C5 /* TeamsScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TeamsScreenViewController.xib; path = FootballApp/Models/TeamsScreenViewController.xib; sourceTree = SOURCE_ROOT; };
 		878DFBBE256C5718003077C5 /* TeamsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamsScreenViewModel.swift; path = FootballApp/Models/TeamsScreenViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -40,6 +46,8 @@
 		878DFBC2256C58DE003077C5 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		878DFBC4256C590C003077C5 /* JSONNUll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNUll.swift; sourceTree = "<group>"; };
 		878DFBC6256C5A9F003077C5 /* TeamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsResponse.swift; sourceTree = "<group>"; };
+		879F32BA25705D83002B07F5 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamTableViewCell.swift; path = FootballApp/Models/TeamTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		879F32BB25705D83002B07F5 /* TeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TeamTableViewCell.xib; path = FootballApp/Models/TeamTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		BA1CE51D256AEEC300FC7E36 /* LeaguesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesScreenViewController.swift; sourceTree = "<group>"; };
 		BA1CE51E256AEEC300FC7E36 /* LeaguesScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesScreenViewController.xib; sourceTree = "<group>"; };
 		BA1CE521256AEEED00FC7E36 /* LeaguesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesScreenViewModel.swift; sourceTree = "<group>"; };
@@ -65,12 +73,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3F3C8DE524534731348CE5 /* Pods_FootballApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15562D9F20B6C963222899D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E041DAADCBB0F37F9422915 /* Pods-FootballApp.debug.xcconfig */,
+				4D5C03140096BA114255BF71 /* Pods-FootballApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		879F32B825705D04002B07F5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				879F32BA25705D83002B07F5 /* TeamTableViewCell.swift */,
+				879F32BB25705D83002B07F5 /* TeamTableViewCell.xib */,
+			);
+			name = Cells;
+			path = ../FootballApp/ViewRelated/ScreenTwo/Cells;
+			sourceTree = "<group>";
+		};
+		879F32B925705D30002B07F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA3DB9462561A1F400F213E1 /* Controllers */,
+				879F32B825705D04002B07F5 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BA1CE523256AF13900FC7E36 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +131,8 @@
 			children = (
 				BA3DB9292561A06F00F213E1 /* FootballApp */,
 				BA3DB9282561A06F00F213E1 /* Products */,
+				15562D9F20B6C963222899D1 /* Pods */,
+				C04B5E15B374A0EE0E33B3C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,8 +198,8 @@
 		BA3DB9412561A17300F213E1 /* ScreenTwo */ = {
 			isa = PBXGroup;
 			children = (
-				BA3DB9462561A1F400F213E1 /* View */,
-				BA3DB9452561A1EA00F213E1 /* ViewModel */,
+				879F32B925705D30002B07F5 /* Views */,
+				BA3DB9452561A1EA00F213E1 /* ViewModels */,
 			);
 			path = ScreenTwo;
 			sourceTree = "<group>";
@@ -191,21 +230,21 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		BA3DB9452561A1EA00F213E1 /* ViewModel */ = {
+		BA3DB9452561A1EA00F213E1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				878DFBBE256C5718003077C5 /* TeamsScreenViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		BA3DB9462561A1F400F213E1 /* View */ = {
+		BA3DB9462561A1F400F213E1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				878DFBBA256C5703003077C5 /* TeamsScreenViewController.swift */,
 				878DFBBB256C5703003077C5 /* TeamsScreenViewController.xib */,
 			);
-			path = View;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		BA3DB9472561A20000F213E1 /* ViewModel */ = {
@@ -230,6 +269,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		C04B5E15B374A0EE0E33B3C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76593F51F34359B7510385EC /* Pods_FootballApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA3DB9392561A07000F213E1 /* Build configuration list for PBXNativeTarget "FootballApp" */;
 			buildPhases = (
+				322130899F766D7381E3DA07 /* [CP] Check Pods Manifest.lock */,
 				BA3DB9232561A06F00F213E1 /* Sources */,
 				BA3DB9242561A06F00F213E1 /* Frameworks */,
 				BA3DB9252561A06F00F213E1 /* Resources */,
+				431C7472DBA3BA45F767F38F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,11 +341,54 @@
 				878DFBBD256C5703003077C5 /* TeamsScreenViewController.xib in Resources */,
 				BA1CE520256AEEC300FC7E36 /* LeaguesScreenViewController.xib in Resources */,
 				BA3DB9322561A07000F213E1 /* Assets.xcassets in Resources */,
+				879F32BD25705D83002B07F5 /* TeamTableViewCell.xib in Resources */,
 				BA3DB9302561A06F00F213E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		322130899F766D7381E3DA07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FootballApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		431C7472DBA3BA45F767F38F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FootballApp/Pods-FootballApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FootballApp/Pods-FootballApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FootballApp/Pods-FootballApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA3DB9232561A06F00F213E1 /* Sources */ = {
@@ -311,6 +403,7 @@
 				878DFBC1256C5809003077C5 /* Team.swift in Sources */,
 				878DFBBF256C5718003077C5 /* TeamsScreenViewModel.swift in Sources */,
 				BA1CE527256AF2E100FC7E36 /* Competition.swift in Sources */,
+				879F32BC25705D83002B07F5 /* TeamTableViewCell.swift in Sources */,
 				BA990F76256B0A2000800EFA /* Observable.swift in Sources */,
 				BA1CE52F256AF36A00FC7E36 /* Plan.swift in Sources */,
 				BA1CE531256AF3BA00FC7E36 /* Network.swift in Sources */,
@@ -462,9 +555,11 @@
 		};
 		BA3DB93A2561A07000F213E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E041DAADCBB0F37F9422915 /* Pods-FootballApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/FootballApp/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -479,9 +574,11 @@
 		};
 		BA3DB93B2561A07000F213E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D5C03140096BA114255BF71 /* Pods-FootballApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/FootballApp/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

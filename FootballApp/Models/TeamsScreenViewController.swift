@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 // MARK: - TeamsScreenViewController
 class TeamsScreenViewController: UIViewController {
     // MARK: - Outlets
@@ -19,7 +18,7 @@ class TeamsScreenViewController: UIViewController {
     // MARK: - Init
     init(viewModel:TeamsScreenViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: "TeamsScreenViewController", bundle: nil)
+        super.init(nibName: nil, bundle: nil)
         bindOnViewModel()
     }
     
@@ -39,15 +38,15 @@ class TeamsScreenViewController: UIViewController {
     
 }
 
+// MARK: - TableViewDataSource conformance
 extension TeamsScreenViewController:UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = viewModel.teams.value[indexPath.row].name
-        cell.detailTextLabel?.text = viewModel.teams.value[indexPath.row].area.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamTableViewCell", for: indexPath) as! TeamTableViewCell
+        configureCell(cell, at: indexPath)
         return cell
     }
     
@@ -71,5 +70,14 @@ private extension TeamsScreenViewController {
     
     func configureTableView() {
         self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "TeamTableViewCell", bundle: nil), forCellReuseIdentifier: "TeamTableViewCell")
+    }
+    
+    func configureCell(_ cell:TeamTableViewCell, at indexPath :IndexPath){
+        cell.teamNameLabel.text = viewModel.teams.value[indexPath.row].name
+        cell.teamShortNameLabel.text = viewModel.teams.value[indexPath.row].shortName
+//        let url = URL(string: self.viewModel.teams.value[indexPath.row].crestURL ?? "")
+        
+
     }
 }
