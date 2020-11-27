@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        window = UIWindow(frame: UIScreen.main.bounds)
         // register coder, on AppDelegate
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let leaguesScreenViewController = LeaguesScreenViewController(viewModel: LeaguesScreenViewModel())
         let navigationController = UINavigationController(rootViewController: leaguesScreenViewController)
         self.window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 

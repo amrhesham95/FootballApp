@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181A366425712DEC00BE9B88 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A366325712DEC00BE9B88 /* RealmStorage.swift */; };
 		8748100C25708CA000785111 /* TeamTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748100B25708CA000785111 /* TeamTableViewCellViewModel.swift */; };
 		874810132570975C00785111 /* LeagueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874810112570975C00785111 /* LeagueTableViewCell.swift */; };
 		874810142570975C00785111 /* LeagueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 874810122570975C00785111 /* LeagueTableViewCell.xib */; };
@@ -31,8 +32,6 @@
 		BA1CE52F256AF36A00FC7E36 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1CE52E256AF36A00FC7E36 /* Plan.swift */; };
 		BA1CE531256AF3BA00FC7E36 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1CE530256AF3BA00FC7E36 /* Network.swift */; };
 		BA3DB92B2561A06F00F213E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DB92A2561A06F00F213E1 /* AppDelegate.swift */; };
-		BA3DB92D2561A06F00F213E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DB92C2561A06F00F213E1 /* ViewController.swift */; };
-		BA3DB9302561A06F00F213E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3DB92E2561A06F00F213E1 /* Main.storyboard */; };
 		BA3DB9322561A07000F213E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3DB9312561A07000F213E1 /* Assets.xcassets */; };
 		BA3DB9352561A07000F213E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3DB9332561A07000F213E1 /* LaunchScreen.storyboard */; };
 		BA990F76256B0A2000800EFA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA990F75256B0A2000800EFA /* Observable.swift */; };
@@ -40,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181A366325712DEC00BE9B88 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		4D5C03140096BA114255BF71 /* Pods-FootballApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballApp.release.xcconfig"; path = "Target Support Files/Pods-FootballApp/Pods-FootballApp.release.xcconfig"; sourceTree = "<group>"; };
 		4E041DAADCBB0F37F9422915 /* Pods-FootballApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballApp.debug.xcconfig"; path = "Target Support Files/Pods-FootballApp/Pods-FootballApp.debug.xcconfig"; sourceTree = "<group>"; };
 		76593F51F34359B7510385EC /* Pods_FootballApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,8 +68,6 @@
 		BA1CE530256AF3BA00FC7E36 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BA3DB9272561A06F00F213E1 /* FootballApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3DB92A2561A06F00F213E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA3DB92C2561A06F00F213E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BA3DB92F2561A06F00F213E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA3DB9312561A07000F213E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA3DB9342561A07000F213E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA3DB9362561A07000F213E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +93,14 @@
 				4D5C03140096BA114255BF71 /* Pods-FootballApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		181A366225712DE000BE9B88 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				181A366325712DEC00BE9B88 /* RealmStorage.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		8748100925708C6100785111 /* Cells */ = {
@@ -211,8 +217,6 @@
 				BA3DB93E2561A0F100F213E1 /* ViewRelated */,
 				BA3DB93D2561A0C200F213E1 /* Networking */,
 				BA3DB93C2561A0AC00F213E1 /* Storage */,
-				BA3DB92C2561A06F00F213E1 /* ViewController.swift */,
-				BA3DB92E2561A06F00F213E1 /* Main.storyboard */,
 				BA3DB9312561A07000F213E1 /* Assets.xcassets */,
 				BA3DB9332561A07000F213E1 /* LaunchScreen.storyboard */,
 			);
@@ -222,6 +226,7 @@
 		BA3DB93C2561A0AC00F213E1 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				181A366225712DE000BE9B88 /* Realm */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -403,7 +408,6 @@
 				BA1CE520256AEEC300FC7E36 /* LeaguesScreenViewController.xib in Resources */,
 				BA3DB9322561A07000F213E1 /* Assets.xcassets in Resources */,
 				879F32BD25705D83002B07F5 /* TeamTableViewCell.xib in Resources */,
-				BA3DB9302561A06F00F213E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +463,6 @@
 				878DFBC5256C590C003077C5 /* JSONNUll.swift in Sources */,
 				8748101625710BC900785111 /* LeagueTableViewCellViewModel.swift in Sources */,
 				878DFBC3256C58DE003077C5 /* Season.swift in Sources */,
-				BA3DB92D2561A06F00F213E1 /* ViewController.swift in Sources */,
 				BA1CE529256AF2FE00FC7E36 /* Area.swift in Sources */,
 				BA1CE52B256AF31B00FC7E36 /* CurrentSeason.swift in Sources */,
 				878DFBC1256C5809003077C5 /* Team.swift in Sources */,
@@ -471,6 +474,7 @@
 				BA1CE531256AF3BA00FC7E36 /* Network.swift in Sources */,
 				BA1CE522256AEEED00FC7E36 /* LeaguesScreenViewModel.swift in Sources */,
 				BA3DB92B2561A06F00F213E1 /* AppDelegate.swift in Sources */,
+				181A366425712DEC00BE9B88 /* RealmStorage.swift in Sources */,
 				8748100C25708CA000785111 /* TeamTableViewCellViewModel.swift in Sources */,
 				BA1CE51F256AEEC300FC7E36 /* LeaguesScreenViewController.swift in Sources */,
 				878DFBBC256C5703003077C5 /* TeamsScreenViewController.swift in Sources */,
@@ -484,14 +488,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BA3DB92E2561A06F00F213E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA3DB92F2561A06F00F213E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BA3DB9332561A07000F213E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
