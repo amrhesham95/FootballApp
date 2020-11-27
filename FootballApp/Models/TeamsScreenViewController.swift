@@ -74,10 +74,7 @@ private extension TeamsScreenViewController {
     }
     
     func configureCell(_ cell:TeamTableViewCell, at indexPath :IndexPath){
-        cell.teamNameLabel.text = viewModel.teams.value[indexPath.row].name
-        cell.teamShortNameLabel.text = viewModel.teams.value[indexPath.row].shortName
-//        let url = URL(string: self.viewModel.teams.value[indexPath.row].crestURL ?? "")
-        
-
+        let cellViewModel = TeamTableViewCellViewModel(team: viewModel.teams.value[indexPath.row])
+        cell.viewModel = cellViewModel
     }
 }

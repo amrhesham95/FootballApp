@@ -12,42 +12,27 @@ import SDWebImageSVGCoder
 // MARK: - TeamTableViewCell
 class TeamTableViewCell: UITableViewCell, WKNavigationDelegate {
     
-    // MARK: - Properties
+    // MARK: - Outlets
     @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var teamShortNameLabel: UILabel!
     @IBOutlet weak var teamLogoVIew: WKWebView!
     
-    // MARK: - LifeCycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        loadImage()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func loadImage(){
-        let url = URL(string: "https://crests.football-data.org/385.svg")
-        
-        if let svgURL = url {
-            // register coder, on AppDelegate
-            let SVGCoder = SDImageSVGCoder.shared
-            SDImageCodersManager.shared.addCoder(SVGCoder)
-            // load SVG url
-            teamImageView.sd_setImage(with: svgURL)
-            // Changing size
-//            var rect = teamImageView.frame
-//            rect.size.width = 200
-//            rect.size.height = 200
-//            teamImageView.frame = rect
-            
+    // MARK: - Properties
+    var viewModel:TeamTableViewCellViewModel? {
+        didSet {
+            configureCell()
         }
+    }
 
+    func configureCell() {
+        self.teamNameLabel.text = viewModel?.team.name
+        self.teamShortNameLabel.text = viewModel?.team.shortName
+        let url = URL(string: self.viewModel?.team.crestURL ?? "" )
+        if let svgURL = url {
+            // load SVG url
+            self.teamImageView.sd_setImage(with: svgURL)
+        }
     }
 
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImageSVGCoder
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // register coder, on AppDelegate
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+        
         let leaguesScreenViewController = LeaguesScreenViewController(viewModel: LeaguesScreenViewModel())
         let navigationController = UINavigationController(rootViewController: leaguesScreenViewController)
         self.window?.rootViewController = navigationController

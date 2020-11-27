@@ -7,18 +7,16 @@
 //
 
 import Foundation
+
 // MARK: - TeamsScreenViewModel
 class TeamsScreenViewModel {
-    // make the list observable and subscribe on it in viewController
+    
+    // MARK: - Properties
     var teams = Observable<Array<Team>>([])
-    var competitionID:Int {
-        didSet {
-            network.getAllTeams(with: self.competitionID) { (team) in
-                self.teams.value = team
-            }
-        }
-    }
+    var competitionID:Int
     let network = Network()
+    
+    // MARK: - Init
     init(competitionID:Int) {
         self.competitionID = competitionID
         network.getAllTeams(with: self.competitionID) { (team) in
@@ -27,3 +25,4 @@ class TeamsScreenViewModel {
     }
     
 }
+
