@@ -12,6 +12,7 @@ import SDWebImageSVGCoder
 // MARK: - TeamTableViewCell
 class TeamTableViewCell: UITableViewCell, WKNavigationDelegate {
     
+    
     // MARK: - Outlets
     @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
@@ -24,7 +25,12 @@ class TeamTableViewCell: UITableViewCell, WKNavigationDelegate {
             configureCell()
         }
     }
+        
+}
 
+// MARK: - ConfigureVIew
+private extension TeamTableViewCell {
+    
     func configureCell() {
         self.teamNameLabel.text = viewModel?.team.name
         self.teamShortNameLabel.text = viewModel?.team.shortName
@@ -34,7 +40,4 @@ class TeamTableViewCell: UITableViewCell, WKNavigationDelegate {
             self.teamImageView.sd_setImage(with: svgURL)
         }
     }
-
-    
-    
 }
