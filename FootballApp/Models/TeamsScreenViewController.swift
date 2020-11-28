@@ -55,6 +55,14 @@ extension TeamsScreenViewController:UITableViewDataSource {
     }
 }
 
+extension TeamsScreenViewController:UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let teamDetailsViewController = TeamDetailsViewController(viewModel:TeamDetailsViewModel(team: self.viewModel.teams.value[indexPath.row]))
+        self.navigationController?.pushViewController(teamDetailsViewController, animated: true)
+
+    }
+}
+
 // MARK: - Binding
 private extension TeamsScreenViewController {
     
@@ -70,6 +78,7 @@ private extension TeamsScreenViewController {
     
     func configureTableView() {
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.register(UINib(nibName: "TeamTableViewCell", bundle: nil), forCellReuseIdentifier: "TeamTableViewCell")
     }
     
