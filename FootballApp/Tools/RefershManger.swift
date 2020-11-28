@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Refresh Handler - CHeck if it possible to refresh using definite key and interval types
+// MARK: - Refresh Handler - Check if it possible to refresh using definite key and interval types
 //
 class RefreshHandler: NSObject {
     
@@ -69,7 +69,7 @@ extension RefreshHandler {
     }
     
     enum Key: String {
-        case notifications = "notifications_last_refresh"
-        case services = "services_last_refresh"
+        case leagues = "leagues_last_refresh"
+        case teams = "teams_last_refresh"
     }
 }

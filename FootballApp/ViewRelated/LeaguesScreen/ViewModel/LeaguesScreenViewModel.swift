@@ -10,12 +10,13 @@ import Foundation
 
 // MARK: - LeaguesScreenViewModel
 class LeaguesScreenViewModel {
+    //TODO: refactor and we save in the database the whole data which should be refactord to just saved the filtered data
     var list = [2000,2001,2002,2003,2013,2014,2015,2016,2017,2018,2019,2021]
     // make the list observable and subscribe on it in viewController
     var competitions = Observable<Array<StorageCompetition>>([])
-    let network = Network()
+    let store = Store()
     init() {
-        network.getAllLeagues { [weak self] (leagues) in
+        store.getAllLeagues { [weak self] (leagues) in
             self?.competitions.value = leagues.storageCompetitions.filter({ [weak self] (competition) -> Bool in
                 self?.list.contains(competition.id) ?? false
             }) 

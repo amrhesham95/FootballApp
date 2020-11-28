@@ -35,11 +35,6 @@ class Network {
                         // 6
                         do {
                             let leagues = try JSONDecoder().decode(Leagues.self, from: data)
-                            
-                            
-//                            DispatchQueue.main.async {
-//                               try! self?.manager.insertNewObject(object: leagues.storageLeagues)
-//                            }
                             completion(leagues.storageLeagues)
                         }catch {
                                 print(error)
@@ -50,7 +45,7 @@ class Network {
         }
     
     
-    func getAllTeams(with id:Int, completion:@escaping ( Array<StorageTeam> ) -> Void) {
+    func getAllTeams(with id:Int, completion:@escaping (StorageTeamsResponse) -> Void) {
         let url  = URL(string: "http://api.football-data.org/v2/competitions/\(id)/teams")
                 guard let comptetionsUrl = url else {return}
                 
@@ -71,7 +66,7 @@ class Network {
                                 do {
                                     let teamsResponse = try JSONDecoder().decode(TeamsResponse.self, from: data)
                                     
-                                    completion(Array(teamsResponse.storageTeamsResponse.storageTeams) )
+                                    completion(teamsResponse.storageTeamsResponse)
                                     
                                 }catch {
                                     print(error)

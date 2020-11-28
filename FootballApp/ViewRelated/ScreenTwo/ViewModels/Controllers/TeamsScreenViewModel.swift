@@ -14,13 +14,13 @@ class TeamsScreenViewModel {
     // MARK: - Properties
     var teams = Observable<Array<StorageTeam>>([])
     var competitionID:Int
-    let network = Network()
+    let store = Store()
     
     // MARK: - Init
     init(competitionID:Int) {
         self.competitionID = competitionID
-        network.getAllTeams(with: self.competitionID) { (team) in
-            self.teams.value = team
+        store.getAllTeams(with: self.competitionID) { (team) in
+            self.teams.value = Array(team.storageTeams)
         }
     }
     

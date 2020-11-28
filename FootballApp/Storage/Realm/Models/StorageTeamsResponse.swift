@@ -12,7 +12,7 @@ import RealmSwift
 // MARK: - StorageTeams
 class StorageTeamsResponse: Object {
     @objc dynamic var count: Int = 0
-//    @objc dynamic var filters: StorageFilter = 0
+    @objc dynamic var id: Int = 0
     @objc dynamic var storageCompetition: StorageCompetition?
     dynamic var storageTeams =  List<StorageTeam>()
     
