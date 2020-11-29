@@ -21,6 +21,7 @@ extension TeamsResponse {
     var storageTeamsResponse: StorageTeamsResponse {
         let storageTeamsResponse = StorageTeamsResponse()
         storageTeamsResponse.count = count ?? .zero
+        storageTeamsResponse.id = competition?.id ?? .zero
         teams?.forEach({ (team) in
             storageTeamsResponse.storageTeams.append(team.storageTeam)
         })

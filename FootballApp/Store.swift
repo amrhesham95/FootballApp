@@ -49,60 +49,32 @@ extension Store {
 // MARK: - Teams Handlers
 extension Store {
     //TODO: Refactor
-    func getAllTeams(with id:Int, completion:@escaping (StorageTeamsResponse) -> Void){
+    func getAllTeams(with id:Int, completion:@escaping (StorageTeamsResponse?) -> Void){
+        let isNetworkAvailable = Reachability.isConnectedToNetwork()
+        
+        isNetworkAvailable ? updateTeamsThenFetch(with: id, completion: completion) : fetchTeams(with: id, completion: completion)
+    
+    }
+    
+    func fetchTeams(with id:Int, completion: @escaping (StorageTeamsResponse?) -> Void) {
         let query = "id == \(id)"
         let predicate = NSPredicate(format: query)
-        if storageManager.allObjects(ofType: StorageTeamsResponse.self, matching: predicate).count != 0 {
-            if teamsRefreshHandler.shouldRefresh {
-                //TODO: delete the old and insert .. or update
-                self.network.getAllTeams(with:id) { [weak self] (storageTeams) in
-                    DispatchQueue.main.async {
-                        do {
-                            storageTeams.id = id
-                            try self?.storageManager.insertNewObject(object: storageTeams)
-                            if let teams = self?.fetchTeams(with: id) {
-                                completion(teams)
-                            }
-                            
-                        }catch {
-                            print(error)
-                        }
-                    }
-                    
-                }
-            }else {
-                if let teams = fetchTeams(with:id) {
-                    completion(teams)
-                }
-            }
-        }else {
-            self.network.getAllTeams(with:id) { [weak self] (storageTeams) in
-                DispatchQueue.main.async {
-                    do {
-                        storageTeams.id = id
-                        try self?.storageManager.insertNewObject(object: storageTeams)
-                        if let teams = self?.fetchTeams(with: id) {
-                            completion(teams)
-                        }
-                        
-                    }catch {
-                        print(error)
-                    }
-                }
-                
-            }
-        }
-        
-        
+        let teams = storageManager.allObjects(ofType: StorageTeamsResponse.self, matching: predicate).first
+        completion(teams)
         
     }
     
-    func fetchTeams(with id:Int) -> StorageTeamsResponse? {
-        let query = "id == \(id)"
-        let predicate = NSPredicate(format: query)
-        return storageManager.allObjects(ofType: StorageTeamsResponse.self, matching: predicate).first
-        
+    func updateTeamsThenFetch(with id: Int, completion: @escaping (StorageTeamsResponse?) -> Void) {
+        self.network.getAllTeams(with: id) { [weak self] (storageTeamsResponse) in
+               DispatchQueue.main.async {
+                   try? self?.storageManager.insertNewObject(object: storageTeamsResponse)
+                   completion(storageTeamsResponse)
+               }
+               
+           }
+    
     }
+    
 }
 
 // MARK: - Constants

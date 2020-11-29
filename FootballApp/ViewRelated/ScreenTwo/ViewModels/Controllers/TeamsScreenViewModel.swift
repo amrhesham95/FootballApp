@@ -19,8 +19,9 @@ class TeamsScreenViewModel {
     // MARK: - Init
     init(competitionID:Int) {
         self.competitionID = competitionID
-        store.getAllTeams(with: self.competitionID) { (team) in
-            self.teams.value = Array(team.storageTeams)
+        store.getAllTeams(with: self.competitionID) { (teamsResponse) in
+            guard let teamsResponse = teamsResponse else { return }
+            self.teams.value = Array(teamsResponse.storageTeams)
         }
     }
     
