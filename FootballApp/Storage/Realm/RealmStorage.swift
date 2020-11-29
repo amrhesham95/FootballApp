@@ -38,7 +38,7 @@ extension RealmStorage {
     
     public func insertNewObject<T>(object: T) throws where T: Object {
         try realm.write {
-            realm.add(object)
+            realm.add(object, update: .modified)
         }
     }
     

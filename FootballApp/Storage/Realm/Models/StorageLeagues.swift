@@ -12,8 +12,12 @@ import RealmSwift
 // MARK: - StorageCompetitions
 class StorageLeagues: Object {
     @objc dynamic var count: Int = 0
-//    @objc dynamic var filters: StorageFilter = 0
+    @objc dynamic var id: String = UUID.init().uuidString
     dynamic var storageCompetitions = List<StorageCompetition>()
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
     
 }
 //// MARK: - Competitions

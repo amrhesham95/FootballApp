@@ -16,6 +16,9 @@ class StorageTeamsResponse: Object {
     @objc dynamic var storageCompetition: StorageCompetition?
     dynamic var storageTeams =  List<StorageTeam>()
     
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }
 //// MARK: - Teams
 //struct Teams: Codable {

@@ -15,41 +15,32 @@ class Store {
     let leaguesRefreshHandler = RefreshHandler(key: .leagues, interval: Constants.leaguesRefreshInterval)
     let teamsRefreshHandler = RefreshHandler(key: .teams, interval: Constants.teamsRefreshInterval)
     let storageManager = RealmStorage()
-   
+    
 }
 
 // MARK: Leagues Handlers
 extension Store {
     
-    //TODO: Refactor
-    func getAllLeagues(completion:@escaping (StorageLeagues) -> Void){
-        if leaguesRefreshHandler.shouldRefresh {
-            self.network.getAllLeagues { [weak self] (storageLeagues) in
-                DispatchQueue.main.async {
-                    do {
-                        
-                        try self?.storageManager.insertNewObject(object: storageLeagues)
-                        if let leagues = self?.fetchLeagues() {
-                            completion(leagues)
-                        }
-                        
-                    }catch {
-                        print(error)
-                    }
-                }
-                
-            }
-        }else {
-            if let leagues = fetchLeagues() {
-                completion(leagues)
-            }
-        }
+    func getAllLeagues(completion:@escaping (StorageLeagues?) -> Void){
         
+        let isNetworkAvailable = Reachability.isConnectedToNetwork()
+        isNetworkAvailable ? updateLeaguesThenFetch(completion: completion) : fetchLeagues(completion: completion)
         
     }
     
-    func fetchLeagues() -> StorageLeagues? {
-        return  storageManager.allObjects(ofType: StorageLeagues.self).first
+    func updateLeaguesThenFetch(completion: @escaping (StorageLeagues?) -> Void) {
+        self.network.getAllLeagues { [weak self] (storageLeagues) in
+            DispatchQueue.main.async {
+                try? self?.storageManager.insertNewObject(object: storageLeagues)
+                completion(storageLeagues)
+            }
+            
+        }
+    }
+    
+    func fetchLeagues(completion: @escaping (StorageLeagues?) -> Void) {
+        let leagues = storageManager.allObjects(ofType: StorageLeagues.self).first
+        completion(leagues)
         
     }
 }
@@ -64,26 +55,26 @@ extension Store {
         if storageManager.allObjects(ofType: StorageTeamsResponse.self, matching: predicate).count != 0 {
             if teamsRefreshHandler.shouldRefresh {
                 //TODO: delete the old and insert .. or update
-                       self.network.getAllTeams(with:id) { [weak self] (storageTeams) in
-                           DispatchQueue.main.async {
-                               do {
-                                   storageTeams.id = id
-                                   try self?.storageManager.insertNewObject(object: storageTeams)
-                                   if let teams = self?.fetchTeams(with: id) {
-                                       completion(teams)
-                                   }
-                                   
-                               }catch {
-                                   print(error)
-                               }
-                           }
-                           
-                       }
-                   }else {
-                       if let teams = fetchTeams(with:id) {
-                           completion(teams)
-                       }
-                   }
+                self.network.getAllTeams(with:id) { [weak self] (storageTeams) in
+                    DispatchQueue.main.async {
+                        do {
+                            storageTeams.id = id
+                            try self?.storageManager.insertNewObject(object: storageTeams)
+                            if let teams = self?.fetchTeams(with: id) {
+                                completion(teams)
+                            }
+                            
+                        }catch {
+                            print(error)
+                        }
+                    }
+                    
+                }
+            }else {
+                if let teams = fetchTeams(with:id) {
+                    completion(teams)
+                }
+            }
         }else {
             self.network.getAllTeams(with:id) { [weak self] (storageTeams) in
                 DispatchQueue.main.async {
@@ -101,7 +92,7 @@ extension Store {
                 
             }
         }
-       
+        
         
         
     }
