@@ -34,6 +34,7 @@ extension Team {
     var storageTeam: StorageTeam {
         let storageTeam = StorageTeam()
         storageTeam.id = id
+        storageTeam.area = area.storageArea
         storageTeam.name = name
         storageTeam.crestURL = crestURL ?? ""
         storageTeam.shortName = shortName
