@@ -38,6 +38,9 @@
 		87FAD6E625756F3A00BB6262 /* UITableview+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAD6E525756F3A00BB6262 /* UITableview+Helpers.swift */; };
 		87FAD6E825756F7100BB6262 /* NSObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAD6E725756F7100BB6262 /* NSObject+Helpers.swift */; };
 		87FAD6EA25756FAE00BB6262 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAD6E925756FAE00BB6262 /* UIView+Helpers.swift */; };
+		87FAD6F025756FAE00BB6262 /* FormCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAD6EF25756FAE00BB6262 /* FormCellRepresentable.swift */; };
+		87FAD6F125756FAE00BB6262 /* KeyValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FAD6ED25756FAE00BB6262 /* KeyValueTableViewCell.swift */; };
+		87FAD6F225756FAE00BB6262 /* KeyValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87FAD6EE25756FAE00BB6262 /* KeyValueTableViewCell.xib */; };
 		BA1CE51F256AEEC300FC7E36 /* LeaguesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1CE51D256AEEC300FC7E36 /* LeaguesScreenViewController.swift */; };
 		BA1CE520256AEEC300FC7E36 /* LeaguesScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1CE51E256AEEC300FC7E36 /* LeaguesScreenViewController.xib */; };
 		BA1CE522256AEEED00FC7E36 /* LeaguesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1CE521256AEEED00FC7E36 /* LeaguesScreenViewModel.swift */; };
@@ -90,6 +93,9 @@
 		87FAD6E525756F3A00BB6262 /* UITableview+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableview+Helpers.swift"; sourceTree = "<group>"; };
 		87FAD6E725756F7100BB6262 /* NSObject+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helpers.swift"; sourceTree = "<group>"; };
 		87FAD6E925756FAE00BB6262 /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		87FAD6ED25756FAE00BB6262 /* KeyValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueTableViewCell.swift; sourceTree = "<group>"; };
+		87FAD6EE25756FAE00BB6262 /* KeyValueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyValueTableViewCell.xib; sourceTree = "<group>"; };
+		87FAD6EF25756FAE00BB6262 /* FormCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCellRepresentable.swift; sourceTree = "<group>"; };
 		BA1CE51D256AEEC300FC7E36 /* LeaguesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesScreenViewController.swift; sourceTree = "<group>"; };
 		BA1CE51E256AEEC300FC7E36 /* LeaguesScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesScreenViewController.xib; sourceTree = "<group>"; };
 		BA1CE521256AEEED00FC7E36 /* LeaguesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesScreenViewModel.swift; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 		872C5E802572F3CF006FC604 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				87FAD6EF25756FAE00BB6262 /* FormCellRepresentable.swift */,
+				87FAD6ED25756FAE00BB6262 /* KeyValueTableViewCell.swift */,
+				87FAD6EE25756FAE00BB6262 /* KeyValueTableViewCell.xib */,
 				872C5E822572F3FF006FC604 /* ImageLogoTableViewCell.swift */,
 				872C5E832572F3FF006FC604 /* ImageLogoTableViewCell.xib */,
 			);
@@ -498,6 +507,7 @@
 				872C5E852572F3FF006FC604 /* ImageLogoTableViewCell.xib in Resources */,
 				872C5E7D2572EC1D006FC604 /* TeamDetailsViewController.xib in Resources */,
 				878DFBBD256C5703003077C5 /* TeamsScreenViewController.xib in Resources */,
+				87FAD6F225756FAE00BB6262 /* KeyValueTableViewCell.xib in Resources */,
 				BA1CE520256AEEC300FC7E36 /* LeaguesScreenViewController.xib in Resources */,
 				BA3DB9322561A07000F213E1 /* Assets.xcassets in Resources */,
 				879F32BD25705D83002B07F5 /* TeamTableViewCell.xib in Resources */,
@@ -562,6 +572,7 @@
 				87AD96EE257417A00057FE23 /* Reachability.swift in Sources */,
 				181A366D2571374100BE9B88 /* StorageCurrentSeason.swift in Sources */,
 				878DFBBF256C5718003077C5 /* TeamsScreenViewModel.swift in Sources */,
+				87FAD6F125756FAE00BB6262 /* KeyValueTableViewCell.swift in Sources */,
 				BA1CE527256AF2E100FC7E36 /* Competition.swift in Sources */,
 				879F32BC25705D83002B07F5 /* TeamTableViewCell.swift in Sources */,
 				BA990F76256B0A2000800EFA /* Observable.swift in Sources */,
@@ -573,6 +584,7 @@
 				872C5E7C2572EC1D006FC604 /* TeamDetailsViewController.swift in Sources */,
 				BA3DB92B2561A06F00F213E1 /* AppDelegate.swift in Sources */,
 				872244372572BD6A00103FF1 /* Store.swift in Sources */,
+				87FAD6F025756FAE00BB6262 /* FormCellRepresentable.swift in Sources */,
 				181A366425712DEC00BE9B88 /* RealmStorage.swift in Sources */,
 				181A367625714AC200BE9B88 /* RefershManger.swift in Sources */,
 				872C5E842572F3FF006FC604 /* ImageLogoTableViewCell.swift in Sources */,

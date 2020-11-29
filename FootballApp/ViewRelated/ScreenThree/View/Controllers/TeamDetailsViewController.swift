@@ -40,19 +40,9 @@ class TeamDetailsViewController: UIViewController {
 
 // MARK: - TableView Delegate
  extension TeamDetailsViewController:UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        if let url = URL(string: self.viewModel.team.crestURL) {
-            imageView.sd_setImage(with: url, completed: nil)
-        }
-        return imageView
-    }
+
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        tableView.frame.height / 3
-    }
-    
+
 }
 
 // MARK: - ConfigureView
@@ -60,13 +50,29 @@ private extension TeamDetailsViewController {
     
     /// setup the table view's data source , delegate and register the cells needed
     func configureTableView() {
+        self.tableView.registerCellNib(KeyValueTableViewCell.self)
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        loadImageIntoTableHeader(tableView: self.tableView)
     }
     
     // Configure each cell with it's row
-    func configureCell(_ cell:UITableViewCell, at indexPath :IndexPath){
-        cell.textLabel?.text = rows?[indexPath.row].value
+    func configureCell(_ cell:KeyValueTableViewCell, at indexPath :IndexPath){
+        cell.formData = rows?[indexPath.row]
+    }
+    
+    func loadImageIntoTableHeader(tableView:UITableView) {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        if let url = URL(string: self.viewModel.team.crestURL) {
+            imageView.sd_setImage(with: url, completed: nil)
+        }
+        let imageViewHeight = tableView.frame.size.height / 4
+        let imageViewWidth = tableView.frame.size.width
+        imageView.frame = CGRect(origin: tableView.frame.origin, size: CGSize(width: imageViewWidth, height: imageViewHeight))
+        tableView.tableHeaderView = imageView
+        tableView.reloadData()
+        
     }
 }
 
@@ -77,7 +83,7 @@ extension TeamDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeue(KeyValueTableViewCell.self)
         configureCell(cell, at: indexPath)
         return cell
     }
@@ -91,18 +97,20 @@ private extension TeamDetailsViewController {
     
     func loadRows() {
         self.rows = [
-            Row(title: "name", value: viewModel.team.name),
-            Row(title: "area", value: viewModel.team.area?.name ?? ""),
-            Row(title: "phone", value: viewModel.team.phone),
-            Row(title: "address", value: viewModel.team.address),
-            Row(title: "website", value: viewModel.team.website)
+            Row(placeholder: "name", value: viewModel.team.name),
+            Row(placeholder: "area", value: viewModel.team.area?.name ?? ""),
+            Row(placeholder: "phone", value: viewModel.team.phone),
+            Row(placeholder: "address", value: viewModel.team.address),
+            Row(placeholder: "website", value: viewModel.team.website)
             
         ]
     }
 }
 
 // MARK: - Row
-private struct Row {
-    var title: String
-    var value: String
+private struct Row:FormCellRepresentable {
+    var placeholder: String?
+    
+    var value: String?
+
 }

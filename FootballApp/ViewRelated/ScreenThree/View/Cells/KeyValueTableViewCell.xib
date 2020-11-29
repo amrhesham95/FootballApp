@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="91" id="Iqb-ja-9Hr" customClass="KeyValueTableViewCell" customModule="CashCall" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iqb-ja-9Hr" id="Quk-mX-qnH">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BN4-zO-8v4">
+                        <rect key="frame" x="0.0" y="4" width="414" height="83"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nvn-5C-EIe">
+                                <rect key="frame" x="16" y="16" width="382" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUH-0Q-98P">
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="51"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-Q4-pW8">
+                                        <rect key="frame" x="193" y="0.0" width="189" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nvn-5C-EIe" firstAttribute="leading" secondItem="BN4-zO-8v4" secondAttribute="leading" constant="16" id="7OP-Fl-KwM"/>
+                            <constraint firstAttribute="trailing" secondItem="nvn-5C-EIe" secondAttribute="trailing" constant="16" id="dLe-CF-1xE"/>
+                            <constraint firstItem="nvn-5C-EIe" firstAttribute="top" secondItem="BN4-zO-8v4" secondAttribute="top" constant="16" id="poa-Pf-j6B"/>
+                            <constraint firstAttribute="bottom" secondItem="nvn-5C-EIe" secondAttribute="bottom" constant="16" id="xxw-Z3-3n4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BN4-zO-8v4" firstAttribute="leading" secondItem="Quk-mX-qnH" secondAttribute="leading" id="4fV-L3-vGL"/>
+                    <constraint firstAttribute="trailing" secondItem="BN4-zO-8v4" secondAttribute="trailing" id="9F9-0e-K0i"/>
+                    <constraint firstItem="BN4-zO-8v4" firstAttribute="top" secondItem="Quk-mX-qnH" secondAttribute="top" constant="4" id="DKf-BX-6pa"/>
+                    <constraint firstAttribute="bottom" secondItem="BN4-zO-8v4" secondAttribute="bottom" constant="4" id="ttm-K2-Lvr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="LUH-0Q-98P" id="u3R-r3-xM7"/>
+                <outlet property="valueLabel" destination="b1V-Q4-pW8" id="JEU-iF-c0d"/>
+            </connections>
+            <point key="canvasLocation" x="-46.376811594202906" y="57.254464285714285"/>
+        </tableViewCell>
+    </objects>
+</document>
