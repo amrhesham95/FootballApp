@@ -50,7 +50,7 @@ class TeamDetailsViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        self.view.frame.height / 3
+        tableView.frame.height / 3
     }
     
 }
@@ -62,12 +62,10 @@ private extension TeamDetailsViewController {
     func configureTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
-//        self.tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "LeagueTableViewCell")
     }
     
     // Configure each cell with it's row
     func configureCell(_ cell:UITableViewCell, at indexPath :IndexPath){
-//        cell.textLabel?.text = rows?[indexPath.row].title
         cell.textLabel?.text = rows?[indexPath.row].value
     }
 }
