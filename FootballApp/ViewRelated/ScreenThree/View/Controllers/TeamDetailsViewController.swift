@@ -38,13 +38,6 @@ class TeamDetailsViewController: UIViewController {
 
 }
 
-// MARK: - TableView Delegate
- extension TeamDetailsViewController:UITableViewDelegate {
-
-    
-
-}
-
 // MARK: - ConfigureView
 private extension TeamDetailsViewController {
     
@@ -67,7 +60,7 @@ private extension TeamDetailsViewController {
         if let url = URL(string: self.viewModel.team.crestURL) {
             imageView.sd_setImage(with: url, completed: nil)
         }
-        let imageViewHeight = tableView.frame.size.height / 4
+        let imageViewHeight = tableView.frame.size.height * ViewConstants.logoHeightToTableViewRatio
         let imageViewWidth = tableView.frame.size.width
         imageView.frame = CGRect(origin: tableView.frame.origin, size: CGSize(width: imageViewWidth, height: imageViewHeight))
         tableView.tableHeaderView = imageView
@@ -97,11 +90,11 @@ private extension TeamDetailsViewController {
     
     func loadRows() {
         self.rows = [
-            Row(placeholder: "name", value: viewModel.team.name),
-            Row(placeholder: "area", value: viewModel.team.area?.name ?? ""),
-            Row(placeholder: "phone", value: viewModel.team.phone),
-            Row(placeholder: "address", value: viewModel.team.address),
-            Row(placeholder: "website", value: viewModel.team.website)
+            Row(placeholder: Strings.nameTitle, value: viewModel.team.name),
+            Row(placeholder: Strings.areaTitle, value: viewModel.team.area?.name ?? ""),
+            Row(placeholder: Strings.phoneTitle, value: viewModel.team.phone),
+            Row(placeholder: Strings.addressTitle, value: viewModel.team.address),
+            Row(placeholder: Strings.websiteTitle, value: viewModel.team.website)
             
         ]
     }
@@ -113,4 +106,20 @@ private struct Row:FormCellRepresentable {
     
     var value: String?
 
+}
+
+// MARK: - Constants
+private extension TeamDetailsViewController {
+    enum Strings {
+        static let nameTitle = "name"
+        static let areaTitle = "area"
+        static let phoneTitle = "phone"
+        static let addressTitle = "address"
+        static let websiteTitle = "website"
+        
+    }
+    
+    enum ViewConstants {
+        static let logoHeightToTableViewRatio: CGFloat = 0.25
+    }
 }

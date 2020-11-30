@@ -34,17 +34,14 @@ class LeaguesScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        // Do any additional setup after loading the view.
     }
 
  
 
 }
 
+// MARK: - DataSource Conformance
 extension LeaguesScreenViewController:UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(LeagueTableViewCell.self)
@@ -86,7 +83,9 @@ private extension LeaguesScreenViewController {
     }
     
     func configureCell(_ cell:LeagueTableViewCell, at indexPath :IndexPath){
-        let cellViewModel = LeagueTableViewCellViewModel(competition: viewModel.competitions.value[indexPath.row])
+        
+        // view model has subscript that takes an index and return the competition with the right index
+        let cellViewModel = LeagueTableViewCellViewModel(competition: viewModel[indexPath.row])
         cell.viewModel = cellViewModel
     }
 }

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+
 // MARK: - TeamsScreenViewController
+//
 class TeamsScreenViewController: UIViewController {
+    
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,18 +37,13 @@ class TeamsScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    
 }
 
 // MARK: - TableViewDataSource conformance
 extension TeamsScreenViewController:UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamTableViewCell", for: indexPath) as! TeamTableViewCell
+        let cell = tableView.dequeue(TeamTableViewCell.self)
         configureCell(cell, at: indexPath)
         return cell
     }
@@ -55,6 +53,7 @@ extension TeamsScreenViewController:UITableViewDataSource {
     }
 }
 
+// MARK: - TableView Delegate Methods
 extension TeamsScreenViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let teamDetailsViewController = TeamDetailsViewController(viewModel:TeamDetailsViewModel(team: self.viewModel.teams.value[indexPath.row]))
@@ -79,11 +78,11 @@ private extension TeamsScreenViewController {
     func configureTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.register(UINib(nibName: "TeamTableViewCell", bundle: nil), forCellReuseIdentifier: "TeamTableViewCell")
+        self.tableView.registerCellNib(TeamTableViewCell.self)
     }
     
     func configureCell(_ cell:TeamTableViewCell, at indexPath :IndexPath){
-        let cellViewModel = TeamTableViewCellViewModel(team: viewModel.teams.value[indexPath.row])
+        let cellViewModel = TeamTableViewCellViewModel(team: viewModel[indexPath.row])
         cell.viewModel = cellViewModel
     }
 }

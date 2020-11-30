@@ -16,6 +16,11 @@ class TeamsScreenViewModel {
     var competitionID:Int
     let store = Store()
     
+    /// Return the team right away from the view model given the index of the wanted team
+    subscript(index:Int) -> StorageTeam{
+        return teams.value[index]
+    }
+    
     // MARK: - Init
     init(competitionID:Int) {
         self.competitionID = competitionID
