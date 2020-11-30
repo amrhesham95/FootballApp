@@ -45,7 +45,6 @@ private extension TeamDetailsViewController {
     func configureTableView() {
         self.tableView.registerCellNib(KeyValueTableViewCell.self)
         self.tableView.dataSource = self
-        self.tableView.delegate = self
         loadImageIntoTableHeader(tableView: self.tableView)
     }
     

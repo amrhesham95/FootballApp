@@ -11,12 +11,9 @@ import Foundation
 class Network {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
-    var errorMessage:String?
-    
-    let manager = RealmStorage()
-    
+        
     func getAllLeagues(completion:@escaping (StorageLeagues) -> Void) {
-       let url  = URL(string: "http://api.football-data.org/v2/competitions")
+        let url  = URL(string: NetworkConstants.allLeaguesURL)
         guard let comptetionsUrl = url else {return}
         
         var request = URLRequest(url: comptetionsUrl)
@@ -25,7 +22,6 @@ class Network {
                     defer {
                         self?.dataTask = nil
                     }
-                    // 5
                     if let error = error {
                         print(error)
                     } else if
@@ -46,23 +42,21 @@ class Network {
     
     
     func getAllTeams(with id:Int, completion:@escaping (StorageTeamsResponse) -> Void) {
-        let url  = URL(string: "http://api.football-data.org/v2/competitions/\(id)/teams")
+        let url  = URL(string: NetworkConstants.getAllTeamsURL(id: id))
                 guard let comptetionsUrl = url else {return}
                 
                 var request = URLRequest(url: comptetionsUrl)
-                request.setValue("ec775bfe0f1f4b44bd94227cb623f809", forHTTPHeaderField: "X-Auth-Token")
+        request.setValue(NetworkConstants.apiKey, forHTTPHeaderField: NetworkConstants.headerKey)
                     // 4
                     dataTask =
                         defaultSession.dataTask(with: request) { [weak self] data, response, error in
                             defer {
                                 self?.dataTask = nil
                             }
-                            // 5
                              if let error = error {
                                 print(error)
                             } else if
                                 let data = data {
-                                // 6
                                 do {
                                     let teamsResponse = try JSONDecoder().decode(TeamsResponse.self, from: data)
                                     
@@ -77,3 +71,17 @@ class Network {
                 }
     }
 
+
+private extension Network {
+    enum NetworkConstants {
+        static let allLeaguesURL = "http://api.football-data.org/v2/competitions"
+        
+        static func getAllTeamsURL(id: Int) -> String {
+            return "\(allLeaguesURL)/\(id)/teams"
+        }	
+        
+        static let apiKey = "ec775bfe0f1f4b44bd94227cb623f809"
+        static let headerKey = "X-Auth-Token"
+        
+    }
+}
